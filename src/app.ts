@@ -4,9 +4,14 @@ const app: Application = express();
 
 app.use(cors());
 
+//parser
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
+//Testing
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!');
-});
+  res.send('Hello World!')
+})
 
 export default app;
 // getting-started.js
