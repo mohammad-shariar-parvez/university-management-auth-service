@@ -6,7 +6,7 @@ export const findLastUserId = async () => {
     .lean()
   return lastUser?.id
 }
-
+// Optional filtering
 // User.find({}, { id: 1, _id: 0 }).sort({ createdAt: -1 }).limit(1)
 // db.collection.findOne({}, { id: 1, _id: 0 }, { sort: { createdAt: -1 } })
 
