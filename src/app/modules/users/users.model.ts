@@ -1,10 +1,8 @@
 import { Model, Schema, model } from 'mongoose'
 import { IUser } from './users.interface'
 
-// Create a new Model type that knows about upcimming any methods...
 type UserModel = Model<IUser, object>
 
-// 2. Create a Schema corresponding to the document interface.
 export const userSchema = new Schema<IUser>(
   {
     id: {
