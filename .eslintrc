@@ -17,17 +17,12 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/consistent-type-definitions": ["error", "type"],
-    "@typescript-eslint/no-console": "error",
-    "typescript-eslint/no-undef": "error",
-    "typescript-eslint/no-unused-expressions": "error",
-    "typescript-eslint/no-unreachable": "error"
-
-    // "no-unused-vars": "error",
-    // "no-console": "error",
-    // "no-undef": "error",
-    // "no-unused-expressions": "error",
-    // "no-unreachable": "error",
-    // "consistent-type-definitions": ["error", "type"]
+    "no-unused-vars": "error",
+    "no-console": "error",
+    "no-undef": "error",
+    "no-unused-expressions": "error",
+    "no-unreachable": "error",
+    "consistent-type-definitions": ["error", "type"]
   },
 
   "env": {
