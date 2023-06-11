@@ -1,0 +1,94 @@
+{
+  service: 'user-service',
+  ok: 0,
+  code: 8000,
+  codeName: 'AtlasError',
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'Failed to connect db bad auth : authentication failed',
+  stack: 'MongoServerError: bad auth : authentication failed\n' +
+    '    at Connection.onMessage (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:413:18)\n' +
+    '    at MessageStream.<anonymous> (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:243:56)\n' +
+    '    at MessageStream.emit (node:events:513:28)\n' +
+    '    at processIncomingData (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:187:12)\n' +
+    '    at MessageStream._write (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:68:5)\n' +
+    '    at writeOrBuffer (node:internal/streams/writable:392:12)\n' +
+    '    at _write (node:internal/streams/writable:333:10)\n' +
+    '    at MessageStream.Writable.write (node:internal/streams/writable:337:10)\n' +
+    '    at TLSSocket.ondata (node:internal/streams/readable:766:22)\n' +
+    '    at TLSSocket.emit (node:events:513:28)',
+  label: 'right meow!',
+  timestamp: '2023-06-11T09:11:29.411Z',
+  [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+}
+{
+  service: 'user-service',
+  ok: 0,
+  code: 8000,
+  codeName: 'AtlasError',
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'Failed to connect db bad auth : authentication failed',
+  stack: 'MongoServerError: bad auth : authentication failed\n' +
+    '    at Connection.onMessage (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:413:18)\n' +
+    '    at MessageStream.<anonymous> (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:243:56)\n' +
+    '    at MessageStream.emit (node:events:513:28)\n' +
+    '    at processIncomingData (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:187:12)\n' +
+    '    at MessageStream._write (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:68:5)\n' +
+    '    at writeOrBuffer (node:internal/streams/writable:392:12)\n' +
+    '    at _write (node:internal/streams/writable:333:10)\n' +
+    '    at MessageStream.Writable.write (node:internal/streams/writable:337:10)\n' +
+    '    at TLSSocket.ondata (node:internal/streams/readable:766:22)\n' +
+    '    at TLSSocket.emit (node:events:513:28)',
+  label: 'MSP!',
+  timestamp: '2023-06-11T09:15:39.724Z',
+  [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+}
+{
+  service: 'user-service',
+  ok: 0,
+  code: 8000,
+  codeName: 'AtlasError',
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'Failed to connect db bad auth : authentication failed',
+  stack: 'MongoServerError: bad auth : authentication failed\n' +
+    '    at Connection.onMessage (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:413:18)\n' +
+    '    at MessageStream.<anonymous> (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:243:56)\n' +
+    '    at MessageStream.emit (node:events:513:28)\n' +
+    '    at processIncomingData (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:187:12)\n' +
+    '    at MessageStream._write (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:68:5)\n' +
+    '    at writeOrBuffer (node:internal/streams/writable:392:12)\n' +
+    '    at _write (node:internal/streams/writable:333:10)\n' +
+    '    at MessageStream.Writable.write (node:internal/streams/writable:337:10)\n' +
+    '    at TLSSocket.ondata (node:internal/streams/readable:766:22)\n' +
+    '    at TLSSocket.emit (node:events:513:28)',
+  label: 'MSP !',
+  timestamp: '2023-06-11T09:15:58.365Z',
+  [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+}
+Sun Jun 11 2023 15:17:49 [MSP !] error: Failed to connect db bad auth : authentication failed
+Sun Jun 11 2023 15:20:23 [MSP !] error: Failed to connect db bad auth : authentication failed
+{
+  service: 'user-service',
+  ok: 0,
+  code: 8000,
+  codeName: 'AtlasError',
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'Failed to connect db bad auth : authentication failed',
+  stack: 'MongoServerError: bad auth : authentication failed\n' +
+    '    at Connection.onMessage (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:413:18)\n' +
+    '    at MessageStream.<anonymous> (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:243:56)\n' +
+    '    at MessageStream.emit (node:events:513:28)\n' +
+    '    at processIncomingData (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:187:12)\n' +
+    '    at MessageStream._write (E:\\PG-HERO-2\\university-management-auth-service-backend\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:68:5)\n' +
+    '    at writeOrBuffer (node:internal/streams/writable:392:12)\n' +
+    '    at _write (node:internal/streams/writable:333:10)\n' +
+    '    at MessageStream.Writable.write (node:internal/streams/writable:337:10)\n' +
+    '    at TLSSocket.ondata (node:internal/streams/readable:766:22)\n' +
+    '    at TLSSocket.emit (node:events:513:28)',
+  label: 'MSP !',
+  timestamp: '2023-06-11T09:20:55.992Z',
+  [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+}
