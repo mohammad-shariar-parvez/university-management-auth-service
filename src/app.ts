@@ -1,7 +1,9 @@
 import express, { Application } from 'express'
 import cors from 'cors'
-import usersRoute from './app/modules/users/users.route'
+// import usersRoute from './app/modules/users/user.route'
 import globalErrorHandler from './app/middlewares/globalErrorHandler'
+import { UserRoutes } from './app/modules/users/user.route'
+
 const app: Application = express()
 
 app.use(cors())
@@ -12,14 +14,13 @@ app.use(express.urlencoded({ extended: true }))
 
 //Application routes
 
-app.use('/api/v1/users', usersRoute)
+app.use('/api/v1/users', UserRoutes)
 
 //Testing
 // app.get('/', async (req: Request, res: Response, next: NextFunction) => {
-//   // res.send('Working Sucessfully!')
-//   // throw new ApiError(400, 'Ore Baba Error')
-//   // next('Error from server ')
+//   throw new Error('Testing error Logger')
 // })
+//   res.send('Working Sucessfully!')
 
 app.use(globalErrorHandler)
 
