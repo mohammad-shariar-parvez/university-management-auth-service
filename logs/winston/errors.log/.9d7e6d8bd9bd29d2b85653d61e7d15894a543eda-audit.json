@@ -34,6 +34,11 @@
             "date": 1686571252120,
             "name": "E:\\PG-HERO-2\\university-management-auth-service-backend\\logs\\winston\\errors.log\\mspu-2023-12-06-18-error.log",
             "hash": "a93a13d61dc17effeb50a8f6d711855fd3a200f0209fce3148e30d5d8aa6207e"
+        },
+        {
+            "date": 1686694956310,
+            "name": "E:\\PG-HERO-2\\university-management-auth-service-backend\\logs\\winston\\errors.log\\mspu-2023-14-06-04-error.log",
+            "hash": "0dea545b06ef92fbc9dbff60dd1e7f880cb4ccd8a8ee0a5aac9a89d26d789354"
         }
     ],
     "hashType": "sha256"
