@@ -28,7 +28,7 @@ const logger = createLogger({
         process.cwd(),
         'logs',
         'winston',
-        'successes.log',
+        'successes',
         'mspu-%DATE%-success.log'
       ),
       datePattern: 'YYYY-DD-MM-HH',
@@ -54,7 +54,7 @@ const errorLogger = createLogger({
         process.cwd(),
         'logs',
         'winston',
-        'errors.log',
+        'errors',
         'mspu-%DATE%-error.log'
       ),
       datePattern: 'YYYY-DD-MM-HH',

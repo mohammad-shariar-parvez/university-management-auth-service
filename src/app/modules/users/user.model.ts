@@ -1,7 +1,8 @@
-import { Model, Schema, model } from 'mongoose'
-import { IUser } from './users.interface'
+import { Schema, model } from 'mongoose'
+import { IUser, UserModel } from './user.interface'
 
-type UserModel = Model<IUser, object>
+// Create a new Model type that knows about upcimming any methods...
+// type UserModel = Model<IUser, object>
 
 export const userSchema = new Schema<IUser>(
   {
