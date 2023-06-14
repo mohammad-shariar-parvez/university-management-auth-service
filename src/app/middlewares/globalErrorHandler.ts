@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { ErrorRequestHandler } from 'express'
 import config from '../../config'
+// import { Error } from 'mongoose'
 import { IGenericErrorMessage } from '../../interfaces/error'
 import { handleValidationError } from '../../errors/handleValidationError'
 import ApiError from '../../errors/ApiError'
@@ -9,8 +10,8 @@ import { errorLogger } from '../../shared/logger'
 const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   // eslint-disable-next-line no-unused-expressions
   config.env === 'development'
-    ? console.log('Golbal error handler ', error)
-    : errorLogger.error('Golbal error handler ', error)
+    ? console.log(`🐱‍🏍 globalErrorHandler ~~`, error)
+    : errorLogger.error(`🐱‍🏍 globalErrorHandler ~~`, error)
 
   let statusCode = 500
   let message = 'Something went Wrong'
@@ -59,8 +60,3 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
 }
 
 export default globalErrorHandler
-//   if (err instanceof Error) {
-//     res.status(400).json({ error: err })
-//   } else {
-//     res.status(500).json({ error: 'Something went Wrong' })
-//   }
