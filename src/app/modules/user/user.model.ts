@@ -1,5 +1,5 @@
-import { Schema, model } from 'mongoose'
-import { IUser, UserModel } from './user.interface'
+import { Schema, model } from 'mongoose';
+import { IUser, UserModel } from './user.interface';
 
 // Create a new Model type that knows about upcimming any methods...
 // type UserModel = Model<IUser, object>
@@ -24,7 +24,7 @@ export const userSchema = new Schema<IUser>(
   {
     timestamps: true,
   }
-)
+);
 
 // 3. Create a Model.
-export const User = model<IUser, UserModel>('User', userSchema)
+export const User = model<IUser, UserModel>('User', userSchema);

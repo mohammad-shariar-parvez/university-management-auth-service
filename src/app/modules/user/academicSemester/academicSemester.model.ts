@@ -3,28 +3,18 @@ import {
   AcademicSemeisterModel,
   IAcademicSemester,
 } from './academicSemester.interface';
-
-const Months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-];
+import {
+  acamedicSemesterCodes,
+  acamedicSemesterMonths,
+  acamedicSemesterTitles,
+} from './academicSemester.constant';
 
 export const academicSemesterSchema = new Schema<IAcademicSemester>(
   {
     title: {
       type: String,
       required: true,
-      enum: ['Autumn', 'Summer', 'Falling'],
+      enum: acamedicSemesterTitles,
     },
     year: {
       type: Number,
@@ -33,17 +23,17 @@ export const academicSemesterSchema = new Schema<IAcademicSemester>(
     code: {
       type: String,
       required: true,
-      enum: ['01', '02', '03'],
+      enum: acamedicSemesterCodes,
     },
     startMonth: {
       type: String,
       required: true,
-      enum: Months,
+      enum: acamedicSemesterMonths,
     },
     endMonth: {
       type: String,
       required: true,
-      enum: Months,
+      enum: acamedicSemesterMonths,
     },
   },
   {
