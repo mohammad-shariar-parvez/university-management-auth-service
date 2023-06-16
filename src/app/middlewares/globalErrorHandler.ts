@@ -20,7 +20,6 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   let errorMessage: IGenericErrorMessage[] = [];
 
   if (error?.name === 'ValidationError') {
-    console.log('YOOOO 1111');
     const simplifiedError = handleValidationError(error);
     statusCode = simplifiedError.statusCode;
     message = simplifiedError.message;
