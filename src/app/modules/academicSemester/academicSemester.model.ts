@@ -9,7 +9,7 @@ import {
   acamedicSemesterTitles,
 } from './academicSemester.constant';
 
-import status from 'http-status';
+import httpStatus from 'http-status';
 import ApiError from '../../../errors/ApiError';
 
 export const academicSemesterSchema = new Schema<IAcademicSemester>(
@@ -52,7 +52,10 @@ academicSemesterSchema.pre('save', async function (next) {
   console.log('ISSS EXIAS', isExist);
 
   if (isExist) {
-    throw new ApiError(status.CONFLICT, 'Academic semester is already exist !');
+    throw new ApiError(
+      httpStatus.CONFLICT,
+      'Academic semester is already exist !'
+    );
   }
   next();
 });
