@@ -49,7 +49,6 @@ academicSemesterSchema.pre('save', async function (next) {
     title: this.title,
     year: this.year,
   });
-  console.log('ISSS EXIAS', isExist);
 
   if (isExist) {
     throw new ApiError(
