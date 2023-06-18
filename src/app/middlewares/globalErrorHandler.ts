@@ -10,6 +10,8 @@ import { ZodError } from 'zod';
 import handleZodError from '../../errors/handleZodError';
 
 const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
+  console.log('GLOBAL ERROR HANDLER ');
+
   // eslint-disable-next-line no-unused-expressions
   config.env === 'development'
     ? console.log(`🐱‍🏍 globalErrorHandler ~~`, error)
@@ -41,7 +43,6 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
         ]
       : [];
   } else if (error instanceof Error) {
-    console.log('YOOOO 33333');
     message = error?.message;
     errorMessage = error?.message
       ? [

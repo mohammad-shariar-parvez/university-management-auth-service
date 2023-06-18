@@ -8,7 +8,8 @@ const createSemester = async (
   payload: IAcademicSemester
 ): Promise<IAcademicSemester> => {
   if (academicSemesterTitleCodeMapper[payload.title] !== payload.code) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid Semestere Code');
+    console.log('40000000', academicSemesterTitleCodeMapper[payload.title]);
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid Semester Code');
   }
 
   const result = await AcademicSemester.create(payload);
