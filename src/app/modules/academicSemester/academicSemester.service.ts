@@ -43,7 +43,6 @@ const gteAllSemesters = async (
       })),
     });
   }
-  console.log('SEARCJ ITEM', andConditions);
 
   if (Object.keys(filtersData).length) {
     andConditions.push({
@@ -108,6 +107,12 @@ const getSingleSemester = async (
 
   return result;
 };
+const deleteSemester = async (
+  id: string
+): Promise<IAcademicSemester | null> => {
+  const result = await AcademicSemester.findByIdAndDelete(id);
+  return result;
+};
 const updateSemester = async (
   id: string,
   payload: Partial<IAcademicSemester>
@@ -122,8 +127,6 @@ const updateSemester = async (
   const result = await AcademicSemester.findOneAndUpdate({ _id: id }, payload, {
     new: true,
   });
-  // console.log('RESULT IS', id, result);
-
   return result;
 };
 
@@ -132,4 +135,5 @@ export const AcademicSemesterService = {
   gteAllSemesters,
   getSingleSemester,
   updateSemester,
+  deleteSemester,
 };
