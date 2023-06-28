@@ -4,6 +4,7 @@ import cors from 'cors';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import routes from './app/routes';
 import httpStatus from 'http-status';
+import { generatedFacultyId } from './app/modules/user/user.utils';
 
 const app: Application = express();
 
@@ -32,6 +33,18 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   });
   next();
 });
+
+// const academicSemester = {
+//   code: '01',
+//   year: '2025',
+// };
+
+const testId = async () => {
+  const testId = await generatedFacultyId();
+  // console.log('TEST ID', testId);
+  return testId;
+};
+testId();
 //Testing
 // app.get('/', async (req: Request, res: Response, next: NextFunction) => {
 //   throw new Error('Testing error Logger')
