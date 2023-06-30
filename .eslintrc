@@ -21,11 +21,6 @@
     "no-undef": "error",
     "no-unused-expressions": "error",
     "no-unreachable": "error"
-    // "padding-line-between-statements": [
-    //   "error",
-    //   { "blankLine": "always", "prev": "*", "next": "else" },
-    //   { "blankLine": "always", "prev": "else", "next": "if" }
-    // ]
   },
 
   "env": {
