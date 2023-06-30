@@ -1,33 +1,67 @@
-import { User } from './user.model';
+import { IStudent } from './../student/student.interface';
 import config from '../../../config';
 import ApiError from '../../../errors/ApiError';
 import { IUser } from './user.interface';
-import { generatedFacultyId } from './user.utils';
+import { generatedStudentId } from './user.utils';
+import { AcademicSemester } from '../academicSemester/academicSemester.model';
+import mongoose from 'mongoose';
+import { Student } from '../student/student.model';
+import httpStatus from 'http-status';
 
-//default pass
-
-const createUser = async (user: IUser): Promise<IUser | null> => {
+const createStudent = async (
+  student: IStudent,
+  user: IUser
+): Promise<IUser | null> => {
   // console.log('USER IN SERVICE', user);
 
-  //auto genarated incremental id
-  // const semester = {
-  //   code: '01',
-  //   year: '2025',
-  // };
-  const id = await generatedFacultyId();
-  user.id = id;
+  //default pass
   if (!user.password) {
-    user.password = config.default_user_pass as string;
-  }
-  const createdUser = await User.create(user);
-
-  if (!createdUser) {
-    throw new ApiError(400, 'Failed to create User 1');
+    user.password = config.default_student_pass as string;
   }
 
-  return createdUser;
+  // set role manually
+  user.role = 'student';
+  // get academicsemester referred data from student credential
+  const academicSemester = await AcademicSemester.findById(
+    student.academicSemester
+  );
+
+  //Database Transaction and Rollback operations(ACID)
+  const session = await mongoose.startSession();
+  try {
+    session.startTransaction();
+
+    //Auto Generated incremental student id and write user & student
+    const id = await generatedStudentId(academicSemester);
+    user.id = id;
+    student.id = id;
+
+    // create student collection
+    const newStudent = await Student.create([student], { session });
+    if (!newStudent.length) {
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create student');
+    }
+
+    //add student reference _id to user
+    user.student = newStudent[0]._id;
+
+    // create user collection
+    const newUser = await Student.create([user], { session });
+    if (!newUser.length) {
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create user');
+    }
+
+    await session.commitTransaction();
+    await session.endSession();
+  } catch (error) {
+    await session.abortTransaction();
+    await session.endSession();
+    throw error;
+  }
+
+  return user;
 };
 
 export const UserService = {
-  createUser,
+  createStudent,
 };
