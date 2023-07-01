@@ -1,33 +1,24 @@
-import { bloodGroups, genders } from './../student/students.constant';
 import { z } from 'zod';
+import { bloodGroups, genders } from '../../../constants/common';
 
-const createUserZodSchema = z.object({
+const createStudentZodSchema = z.object({
   body: z.object({
     password: z.string().optional(),
-
     student: z.object({
       name: z.object({
         firstName: z.string({
           required_error: 'First name is required',
         }),
+        middleName: z.string().optional(),
         lastName: z.string({
           required_error: 'Last name is required',
         }),
-        middleName: z.string().optional(),
-      }),
-
-      dateOfBirth: z.string({
-        required_error: 'Date of birth is required',
       }),
       gender: z.enum([...genders] as [string, ...string[]], {
         required_error: 'Gender is required',
       }),
-      bloodGroup: z.enum([...bloodGroups] as [string, ...string[]]).optional(),
-      presentAddress: z.string({
-        required_error: 'Present address is required',
-      }),
-      permanentAddress: z.string({
-        required_error: 'Permanent address is required',
+      dateOfBirth: z.string({
+        required_error: 'Date of birth is required',
       }),
       email: z
         .string({
@@ -40,7 +31,13 @@ const createUserZodSchema = z.object({
       emergencyContactNo: z.string({
         required_error: 'Emergency contact number is required',
       }),
-
+      bloodGroup: z.enum([...bloodGroups] as [string, ...string[]]).optional(),
+      presentAddress: z.string({
+        required_error: 'Present address is required',
+      }),
+      permanentAddress: z.string({
+        required_error: 'Permanent address is required',
+      }),
       academicSemester: z.string({
         required_error: 'Academic semester is required',
       }),
@@ -92,6 +89,127 @@ const createUserZodSchema = z.object({
   }),
 });
 
+const createFacultyZodSchema = z.object({
+  body: z.object({
+    password: z.string().optional(),
+    faculty: z.object({
+      name: z.object({
+        firstName: z.string({
+          required_error: 'First name is required',
+        }),
+        lastName: z.string({
+          required_error: 'Last name is required',
+        }),
+        middleName: z.string().optional(),
+      }),
+      gender: z.enum([...genders] as [string, ...string[]], {
+        required_error: 'Gender is required',
+      }),
+      dateOfBirth: z.string({
+        required_error: 'Date of birth is required',
+      }),
+      email: z
+        .string({
+          required_error: 'Email is required',
+        })
+        .email(),
+      contactNo: z.string({
+        required_error: 'Contact number is required',
+      }),
+      emergencyContactNo: z.string({
+        required_error: 'Emergency contact number is required',
+      }),
+      bloodGroup: z
+        .enum([...bloodGroups] as [string, ...string[]], {
+          required_error: 'Blood group is required',
+        })
+        .optional(),
+      presentAddress: z.string({
+        required_error: 'Present address is required',
+      }),
+      permanentAddress: z.string({
+        required_error: 'Permanent address is required',
+      }),
+      academicDepartment: z.string({
+        required_error: 'Academic department is required',
+      }),
+
+      academicFaculty: z.string({
+        required_error: 'Academic faculty is required',
+      }),
+      designation: z.string({
+        required_error: 'Designation is required',
+      }),
+      profileImage: z.string().optional(),
+    }),
+  }),
+});
+
+const createAdminZodSchema = z.object({
+  body: z.object({
+    password: z.string().optional(),
+
+    admin: z.object({
+      name: z.object({
+        firstName: z.string({
+          required_error: 'First name is required',
+        }),
+        lastName: z.string({
+          required_error: 'Last name is required',
+        }),
+        middleName: z.string().optional(),
+      }),
+
+      dateOfBirth: z.string({
+        required_error: 'Date of birth is required',
+      }),
+
+      gender: z.enum([...genders] as [string, ...string[]], {
+        required_error: 'Gender is required',
+      }),
+
+      bloodGroup: z
+        .enum([...bloodGroups] as [string, ...string[]], {
+          required_error: 'Blood group is required',
+        })
+        .optional(),
+      email: z
+        .string({
+          required_error: 'Email is required',
+        })
+        .email(),
+
+      contactNo: z.string({
+        required_error: 'Contact number is required',
+      }),
+
+      emergencyContactNo: z.string({
+        required_error: 'Emergency contact number is required',
+      }),
+
+      presentAddress: z.string({
+        required_error: 'Present address is required',
+      }),
+
+      permanentAddress: z.string({
+        required_error: 'Permanent address is required',
+      }),
+
+      managementDepartment: z.string({
+        required_error: 'Management department is required',
+      }),
+
+      designation: z.string({
+        required_error: 'Designation is required',
+      }),
+
+      profileImage: z.string().optional(),
+    }),
+  }),
+});
+
 export const UserValidation = {
-  createUserZodSchema,
+  createStudentZodSchema,
+  createFacultyZodSchema,
+  createAdminZodSchema,
 };
