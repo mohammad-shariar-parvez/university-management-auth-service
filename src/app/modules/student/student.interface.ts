@@ -2,23 +2,13 @@ import { Model, Types } from 'mongoose';
 import { IAcademicFaculty } from '../academicFaculty/academicFaculty.interface';
 import { IAcademicDepartment } from '../academicDepartment/academicDepartment.interfaces';
 import { IAcademicSemester } from '../academicSemester/academicSemester.interface';
+import { IBloodGroup, IGender } from '../../../interfaces/common';
 
 export type UserName = {
   firstName: string;
   lastName: string;
   middleName: string;
 };
-
-export type IGender = 'male' | 'female';
-export type IBloodGroup =
-  | 'A+'
-  | 'A-'
-  | 'B+'
-  | 'B-'
-  | 'AB+'
-  | 'AB-'
-  | 'O+'
-  | 'O-';
 
 export type Guardian = {
   fatherName: string;
@@ -56,3 +46,12 @@ export type IStudent = {
   profileImage?: string;
 };
 export type StudentModel = Model<IStudent, Record<string, unknown>>;
+
+export type IStudentFilters = {
+  searchTerm?: string;
+  id?: string;
+  bloodGroup?: string;
+  email?: string;
+  contactNo?: string;
+  emergencyContactNo?: string;
+};

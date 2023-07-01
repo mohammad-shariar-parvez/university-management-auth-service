@@ -1,16 +1,17 @@
-import { IBloodGroup, IGender } from './student.interface';
-
-export const genders: IGender[] = ['male', 'female'];
-export const bloodGroups: IBloodGroup[] = [
-  'A+',
-  'A-',
-  'B+',
-  'B-',
-  'AB+',
-  'AB-',
-  'O+',
-  'O-',
+export const studentSearchableFields = [
+  'id',
+  'email',
+  'contactNo',
+  'name.fisrtName',
+  'name.middleName',
+  'name.lastName',
 ];
 
-export const gender1 = ['male', 'female'];
-export const bloodGroup1 = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
+export const studentFilterableFields = [
+  'searchTerm',
+  'id',
+  'bloodGroup',
+  'email',
+  'contactNo',
+  'emergencyContactNo',
+];

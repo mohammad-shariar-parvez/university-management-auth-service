@@ -5,7 +5,7 @@ import { IUser, UserModel } from './user.interface';
 // type UserModel = Model<IUser, object>
 
 // 2. Create a Schema corresponding to the document interface.
-export const userSchema = new Schema<IUser>(
+export const userSchema = new Schema<IUser, UserModel>(
   {
     id: {
       type: String,
