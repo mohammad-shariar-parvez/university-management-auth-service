@@ -17,6 +17,7 @@ import { IFaculty } from '../faculty/faculty.interface';
 import { Faculty } from '../faculty/faculty.model';
 import { IAdmin } from '../admin/admin.interface';
 import { Admin } from '../admin/admin.model';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 
 const createStudent = async (
   student: IStudent,
