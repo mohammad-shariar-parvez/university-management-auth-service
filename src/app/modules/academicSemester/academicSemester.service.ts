@@ -107,12 +107,14 @@ const getSingleSemester = async (
 
   return result;
 };
+
 const deleteSemester = async (
   id: string
 ): Promise<IAcademicSemester | null> => {
   const result = await AcademicSemester.findByIdAndDelete(id);
   return result;
 };
+
 const updateSemester = async (
   id: string,
   payload: Partial<IAcademicSemester>
