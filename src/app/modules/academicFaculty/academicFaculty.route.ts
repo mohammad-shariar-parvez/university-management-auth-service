@@ -7,6 +7,7 @@ import { AcademicFacultyValidation } from './academicFaculty.validation';
 
 const router = express.Router();
 
+//ISSUE - check , /create-faculty eta user route eo ase kina main file e
 router.post(
   '/create-faculty',
   validateRequest(AcademicFacultyValidation.createFacultyZodSchema),
