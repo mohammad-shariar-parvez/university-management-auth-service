@@ -8,6 +8,7 @@ export const adminFilterableFields = [
   'emergencyContactNo',
   'managementDepartment',
   'designation',
+  'syncId',
 ];
 
 export const adminSearchableFields = [
