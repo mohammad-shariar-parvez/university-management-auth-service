@@ -18,14 +18,23 @@ export type IAcamedicSemesterCodes = '01' | '02' | '03';
 
 export type IAcademicSemester = {
   title: IAcamedicSemesterTitles;
-  year: string;
+  year: number;
   code: IAcamedicSemesterCodes;
   startMonth: IAcademicSemesterMonths;
   endMonth: IAcademicSemesterMonths;
+  syncId: string;
 };
 
 export type AcademicSemeisterModel = Model<IAcademicSemester>;
 
 export type IAcademicSemesterFilters = {
   searchTerm?: string;
+};
+export type IAcademicSemesterCreatedEvent = {
+  title: string;
+  year: string;
+  code: string;
+  startMonth: string;
+  endMonth: string;
+  id: string;
 };

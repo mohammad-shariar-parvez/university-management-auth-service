@@ -10,7 +10,7 @@ const createAcademicSemesterZodSchema = z.object({
     title: z.enum([...acamedicSemesterTitles] as [string, ...string[]], {
       required_error: 'Title is required',
     }),
-    year: z.string({
+    year: z.number({
       required_error: 'Year is required',
     }),
     code: z.enum([...acamedicSemesterCodes] as [string, ...string[]], {
@@ -28,29 +28,17 @@ const updateAcademicSemesterZodSchema = z
   .object({
     body: z.object({
       title: z
-        .enum([...acamedicSemesterTitles] as [string, ...string[]], {
-          required_error: 'Title is required',
-        })
+        .enum([...acamedicSemesterTitles] as [string, ...string[]])
         .optional(),
-      year: z
-        .string({
-          required_error: 'Year is required',
-        })
-        .optional(),
+      year: z.string().optional(),
       code: z
-        .enum([...acamedicSemesterCodes] as [string, ...string[]], {
-          required_error: 'Code is required',
-        })
+        .enum([...acamedicSemesterCodes] as [string, ...string[]])
         .optional(),
       startMonth: z
-        .enum([...acamedicSemesterMonths] as [string, ...string[]], {
-          required_error: 'Start months is required',
-        })
+        .enum([...acamedicSemesterMonths] as [string, ...string[]])
         .optional(),
       endMonth: z
-        .enum([...acamedicSemesterMonths] as [string, ...string[]], {
-          required_error: 'End months is required',
-        })
+        .enum([...acamedicSemesterMonths] as [string, ...string[]])
         .optional(),
     }),
   })
